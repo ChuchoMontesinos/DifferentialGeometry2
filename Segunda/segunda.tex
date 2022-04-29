@@ -1,0 +1,29 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[top=2cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\begin{document}
+\begin{center}
+    Segunda Presentación de Problemas\\
+    Montesinos Correa Jesús Adrián
+\end{center}
+{\bf Sección 2.5, Ejercicio 5 Do Carmo}
+
+\noindent Demuestre que el área de una región acotada $Z$ de la superficie $z=f(x,y)$ está dada por \[\int_{Q}\sqrt{1+{f}_{x}^{2}+{f}_{y}^{2}}\; dxdy\] Donde $Q$ es la proyección normal de $R$ en el plano $XY$
+
+{\it Demostración}
+
+\noindent Sea $X: U\subseteq{\mathbb{R}}^{2}\to S$, donde $U\subseteq dom(f)$ y $R\subseteq X(U)$  dada por \[X(x,y)=(x,y,f(x,y))\] Sabemos que el área está dada por \[A(R)=\int_{Q}||{X}_{x}\times{X}_{v}||\; dxdy,\quad Q={X}^{-1}(R)\] Tomamos las derivadas \[{X}_{x}=\left(1,0,{f}_{x}\right)\quad y\quad {X}_{y}=\left(0,1,{f}_{y}\right)\] Haciendo el producto cruz y tomando su magnitud obtenemos
+\begin{align*}
+    ||{X}_{x}\times{X}_{y}|| & =\begin{vmatrix}
+        {\hat{{\bf a}}}_{x} & {\hat{{\bf a}}}_{y} & {\hat{{\bf a}}}_{z} \\
+        1                   & 0                   & {f}_{x}             \\
+        0                   & 1                   & {f}_{y}
+    \end{vmatrix}=\begin{vmatrix}
+        (-{f}_{x},-{f}_{y},1)
+    \end{vmatrix} \\
+                             & =\sqrt{1+{f}_{x}^{2}+{f}_{y}^{2}}
+\end{align*}
+Sustituyendo obtenemos lo pedido
+\end{document}

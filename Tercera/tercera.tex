@@ -1,0 +1,44 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage[top=2cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\input{../../../../LaTeXCommands/EnvironmentsLaTeX.tex}
+\input{../../../../LaTeXCommands/MathCommands.tex}
+
+\title{Tercera Exposición}
+\author{Jesús Montesinos}
+
+\begin{document}
+
+\maketitle
+{\bf Problema 11, Secc. 2.5 Do Carmo }
+
+\noindent Sea $S$ una superficie de revolución y $C$ su curva generadora. Sea $s$ la longitud de arco de $C$, denotemos por $\rho=\rho\pred{s}$ la distancia al eje de rotación del punto de $C$ correspondiente a $s$, demuestre
+\begin{enumerate}
+    \item El {\bf Teorema de Pappus} Demuestre que el área de $S$ es \[A\pred{S}=2\pi\dint{\rho\pred{s}}{s}{0}{l}\] Donde $l$ es la longitud de $C$
+    \item Usando el {\it teorema de Pappus} obtenga el área de un toroide
+\end{enumerate}
+\begin{Sol}
+    {\bf De 1.} Sean \[x=f\pred{s},\quad z=g\pred{s},\quad \alpha\pred{s}=\pred{f\pred{s},0,g\pred{s}},\; s\in I\] La parametrización de $C$
+
+    Sea \[X\pred{\theta, s}=\pred{f\pred{s}\ccos{\theta},f\pred{s}\ssen{\theta},g\pred{s}}\; s\in I,\; \theta\in\pred{0,2\pi}\] La parametrización de $S$, derivando con respecto a $\theta$ y $s$ obtenemos \[\subi{X}{\theta}=\pred{-f\pred{s}\ssen{\theta},f\pred{s}\ccos{\theta},0},\quad \subi{X}{s}=\pred{{f}_{s}\pred{s}\ccos{\theta},{f}_{s}\ssen{\theta},{g}_{s}\pred{s}}\] Así los coeficientes de la primera forma fundamental son \[E=\squa{f}\pred{s},\quad F=0,\quad G=1\] Luego
+    \begin{align*}
+        A\pred{s} & =\int_{Q}\norm{\subi{X}{\theta}\times\subi{X}{s}}\; d\theta ds \\
+                  & =\int_{Q}\sqrt{EG-\squa{F}}\; d\theta ds                       \\
+                  & =\int_{Q}\sqrt{\squa{f}\pred{s}}\; d\theta ds                  \\
+        \intertext{Como $\rho\pred{s}=\norm{f\pred{s}}=\sqrt{\squa{f}\pred{s}}$ obtenemos}
+                  & =\dint{\dint{\rho\pred{s}}{\theta}{0}{2\pi}}{s}{0}{l}          \\
+                  & =2\pi\dint{\rho\pred{s}}{s}{0}{l}
+    \end{align*}
+\end{Sol}
+
+\newpage
+
+\begin{Sol}
+    {\bf De 2.} Considere el círculo de radio $r$ y centro $\pred{a,0}$, así \[\alpha\pred{u}=\pred{a+r\ccos{u},0,r\ssen{u}},\quad 0<u<2\pi\] Obtenemos su derivada con respecto a $u$ y la norma \[\norm{\prim{\alpha}\pred{u}}=\norm{\pred{-r\ssen{u},0,r\ccos{u}}}=r\] Integrando obtenemos \[s\pred{u}=\dint{\norm{\prim{\alpha}\pred{u}}}{u}{0}{u}=\dint{r}{u}{0}{u}=ru\Rightarrow\; u\pred{s}=\frac{s}{r}\]
+    Reparametrizando $\alpha\pred{u}$ tenemos \[\alpha\pred{s}=\pred{a+r\ccos{\frac{s}{r}},0,r\ssen{\frac{s}{r}}},\quad 0<s<2\pi r\] Así $\rho\pred{s}=a+r\ccos{\frac{s}{r}}$. Por {\bf 1}
+    \[ A\pred{s}=2\pi\dint{\rho\pred{s}}{s}{0}{2\pi r}=2\pi\dint{\pred{a+r\ccos{\frac{s}{r}}}}{s}{0}{2\pi r}=4\pi\squa{r}a\]
+\end{Sol}
+\end{document}
